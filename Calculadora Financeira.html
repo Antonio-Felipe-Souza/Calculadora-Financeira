@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora Fincanceira | Algoritmos</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="titulo"><h2>Forneça os dados abaixo para gerar um relatório mensal do seu empreendimento </body></div>
+        
+        <br><br>
+        <h3> Gastos com matéria prima na produção (unitário)</h3>
+        
+        Qtde. de material consumido (g): <input type="number" id="input_qtdmaterial" placeholder="">
+        <br><br>
+        Valor da matéria prima ($): <input type="number" id="input_customaterial"> 
+        <br><br>
+        
+        <h3> Gastos com funcionários </h3>
+        
+        Salário mensal - unitário ($): <input type="text" id="input_salariofuncionario">
+        <br><br>
+        Quantidade de fucnionários: <input type="number" id="input_qtdfuncionarios">
+        <br><br>
+        
+        <h3> Informações de distribuição </h3>
+        
+        Valor de venda do produto - unitário ($): <input type="number" id="input_valorvenda">
+        <br><br>
+        Qtde. de embalagens distribuidas no lote: <input type="number" id="input_qtdlote">
+        <br><br>
+
+        <button onclick="executar()"> Verificar relatório </button>
+        <br><br>
+
+        <div id="div_mensagem"></div>
+        
+    </body>
+</html>
+
+<script>
+
+    function executar(){
+        var MateriaPrimaConsumida = Number(input_qtdmaterial.value);
+        var CustoMaterial = Number(input_customaterial.value);
+        
+        var SalarioFuncionario = Number(input_salariofuncionario.value);
+        var QuantidadeFuncionario = Number(input_qtdfuncionarios.value);
+
+        var VendaProduto = Number(input_valorvenda.value);
+        var QtdLote = Number(input_qtdlote.value);
+
+        var GastoMateriaPrima = MateriaPrimaConsumida * CustoMaterial * QtdLote;
+
+        var GastoFuncionarios = SalarioFuncionario * QuantidadeFuncionario;
+
+        var GastoDistribuicao = VendaProduto * QtdLote;
+
+        var DesperdicioMateriaPrima = GastoMateriaPrima * 0.25;
+        
+        var DesperdicioFuncionario = GastoFuncionarios * 0.25;
+        
+        var DesperdicioDistribuicao = GastoDistribuicao * 0.25;
+
+        var LucroFinal = GastoDistribuicao - DesperdicioDistribuicao;
+
+        div_mensagem.innerHTML = `Tendo em vista que os seus números mensais, com os respectivos itens, foram de:<br>
+        Matéria prima: gasto de <b>R$${GastoMateriaPrima}</b> para produção; <br>
+        Funcionários: gasto de <b>R$${GastoFuncionarios}</b> com a equipe de funcionários; <br>
+        Distribuição: mensal de <b>${QtdLote}</b> embalagens gerando <b>R$${GastoDistribuicao}</b>. <br><br>
+        
+        Conforme indicativos do padrão de mercado, onde há desperdício total de 25% dos recursos manufaturados, constata-se que houve uma perda de:<br>
+        <b>R$${DesperdicioMateriaPrima}</b> com matéria prima;<br>
+        <b>R$${DesperdicioFuncionario}</b> com os funcionários (além de questões de tempo e mão de obra); <br>
+        E <b>R$${DesperdicioDistribuicao}</b> de sua distribuição. <br><br>
+        
+        Seu lucro final será de <b>R$${LucroFinal}</b>`
+
+    }
+
+
+</script>
