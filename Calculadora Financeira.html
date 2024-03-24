@@ -7,34 +7,39 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="titulo"><h2>Forneça os dados abaixo para gerar um relatório mensal do seu empreendimento </body></div>
-        
-        <br><br>
-        <h3> Gastos com matéria prima na produção (unitário)</h3>
-        
-        Qtde. de material consumido (g): <input type="number" id="input_qtdmaterial" placeholder="">
-        <br><br>
-        Valor da matéria prima ($): <input type="number" id="input_customaterial"> 
-        <br><br>
-        
-        <h3> Gastos com funcionários </h3>
-        
-        Salário mensal - unitário ($): <input type="text" id="input_salariofuncionario">
-        <br><br>
-        Quantidade de fucnionários: <input type="number" id="input_qtdfuncionarios">
-        <br><br>
-        
-        <h3> Informações de distribuição </h3>
-        
-        Valor de venda do produto - unitário ($): <input type="number" id="input_valorvenda">
-        <br><br>
-        Qtde. de embalagens distribuidas no lote: <input type="number" id="input_qtdlote">
-        <br><br>
 
-        <button onclick="executar()"> Verificar relatório </button>
-        <br><br>
+        <div class="titulo">
+            <h2>Forneça os dados abaixo para gerar um relatório mensal do seu empreendimento<h2>
+        </div>
+        
+        <div class="card">
+            
+            <div><h3> Gastos com matéria prima na produção (unitário)</h3></div>
+            
+            Qtde. de material consumido (g): <input class="input" type="number" id="input_qtdmaterial" placeholder="">
+            <br><br>
+            Valor da matéria prima ($): <input class="input" type="number" id="input_customaterial"> 
+            <br><br>
+            
+            <h3> Gastos com funcionários </h3>
+            
+            Salário mensal - unitário ($): <input class="input" type="text" id="input_salariofuncionario">
+            <br><br>
+            Quantidade de fucnionários: <input class="input" type="number" id="input_qtdfuncionarios">
+            <br><br>
+            
+            <h3> Informações de distribuição </h3>
+            
+            Valor de venda do produto - unitário ($): <input class="input" type="number" id="input_valorvenda">
+            <br><br>
+            Qtde. de embalagens distribuidas no lote: <input class="input" type="number" id="input_qtdlote">
+            <br><br><br>
 
-        <div id="div_mensagem"></div>
+            <button class="botao" onclick="executar()"> Verificar relatório </button>
+            <br><br>
+
+            <div class="resposta" id="div_mensagem"></div>
+        </div>
         
     </body>
 </html>

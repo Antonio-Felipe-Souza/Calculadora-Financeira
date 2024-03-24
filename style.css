@@ -1,12 +1,65 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: black;
-    color: white;
+    background-image: url("fundo.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    place-items: center;
+    display: grid;
 }
 
 .titulo{
-    width: 150vh;
-    height: 50px;
-    background-color: antiquewhite;
+    width: 50%;
+    padding: 5px 10px 5px;
+    border-radius: 1.25rem;
+    background: rgba(209, 209, 209, .8);
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.card{
+    width: 25%;
+    padding: 44px 80px 44px;
+    border-radius: 1.25rem;
+    background: white;
+    text-align: left;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.input{
+    width: 100px;
+    border-radius: 4px;
+    border-width: 1px;
+}
+
+.botao{
+    display: flex;
+    width: 150px;
+    height: 30px;
+    background-color: rgb(39,90,122);
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+    border-radius: 4px;
+    border-width: 1px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.resposta{
     border-radius: 10px;
+    width: 100%;
+    justify-content: flex-start;
+    border-color: rgb(39,90,122);
+    background-color:  rgba(209, 209, 209, .8);
+    align-items: center;
+    border-style: solid;
+    border-width: 1px;
+    padding: 7px;
 }
